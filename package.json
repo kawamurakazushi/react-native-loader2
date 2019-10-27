@@ -26,13 +26,14 @@
   "files": [
     "lib"
   ],
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
   "repository": "ssh://git@github.com/kawamurakazushi/react-native-loader2.git",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "build"
   }
 }
