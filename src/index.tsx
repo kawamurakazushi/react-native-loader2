@@ -39,8 +39,7 @@ const Loader = () => {
           height: 100,
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
-          boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.1)"
+          alignItems: "center"
         }}
       >
         <ActivityIndicator size="large" />

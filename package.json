@@ -1,13 +1,14 @@
 {
   "name": "react-native-loader2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "ssh://git@github.com/kawamurakazushi/react-native-loader2.git",
   "author": "Kazushi Kawamura <wakaka2277@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-native": "^0.61.2"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
@@ -16,5 +17,19 @@
   },
   "scripts": {
     "build": "tsc"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "stepper",
+    "progress",
+    "progress-steps"
+  ]
 }
