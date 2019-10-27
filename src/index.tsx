@@ -54,7 +54,7 @@ interface Props {
 }
 
 export const Provider = ({ children }: Props) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   return (
     <LoaderContext.Provider value={[loading, setLoading]}>
       <>
