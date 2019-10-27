@@ -1,0 +1,20 @@
+{
+  "name": "react-native-loader2",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "ssh://git@github.com/kawamurakazushi/react-native-loader2.git",
+  "author": "Kazushi Kawamura <wakaka2277@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.21",
+    "typescript": "^3.6.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
