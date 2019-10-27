@@ -34,6 +34,6 @@
   "repository": "ssh://git@github.com/kawamurakazushi/react-native-loader2.git",
   "scripts": {
     "build": "tsc",
-    "prepublish": "build"
+    "prepublish": "yarn build"
   }
 }
