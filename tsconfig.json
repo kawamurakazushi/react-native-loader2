@@ -13,5 +13,6 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "lib": ["esnext"]
-  }
+  },
+  "exclude": ["example"]
 }
