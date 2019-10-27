@@ -9,7 +9,7 @@
     "declaration": true,
     "pretty": true,
     "newLine": "lf",
-    "outDir": "dist",
+    "outDir": "lib",
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "lib": ["esnext"]
