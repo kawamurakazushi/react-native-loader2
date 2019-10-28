@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
-
-import { Loader } from "./Loader";
+import { View, ActivityIndicator, Text } from "react-native";
 
 interface Context {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -37,6 +36,7 @@ export interface OptionalConfig {
   spinnerColor?: string;
   cornerRadius?: number;
   titleColor?: string;
+  spinnerComponent?: React.FunctionComponent;
 }
 
 interface Config {
@@ -46,6 +46,7 @@ interface Config {
   spinnerColor: string;
   cornerRadius: number;
   titleColor: string;
+  spinnerComponent?: React.FunctionComponent;
 }
 
 export interface ProviderProps {
@@ -72,22 +73,49 @@ export const Provider = ({ children, config }: ProviderProps) => {
     foregroundColor,
     spinnerColor,
     cornerRadius,
-    titleColor
+    titleColor,
+    spinnerComponent: SpinnerComponent
   } = { ...defaultConfig, ...config };
 
   return (
     <LoaderContext.Provider value={{ setLoading, setTitle }}>
       <>
         {loading && (
-          <Loader
-            size={size}
-            backgroundColor={backgroundColor}
-            foregroundColor={foregroundColor}
-            spinnerColor={spinnerColor}
-            cornerRadius={cornerRadius}
-            title={title}
-            titleColor={titleColor}
-          />
+          <View
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              backgroundColor: backgroundColor,
+              zIndex: 99999,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <View
+              style={{
+                borderRadius: cornerRadius,
+                backgroundColor: foregroundColor,
+                width: size,
+                height: size,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              {SpinnerComponent ? (
+                <SpinnerComponent />
+              ) : (
+                <ActivityIndicator color={spinnerColor} size="large" />
+              )}
+              {title && (
+                <Text style={{ marginTop: 8, color: titleColor }}>{title}</Text>
+              )}
+            </View>
+          </View>
         )}
         {children}
       </>

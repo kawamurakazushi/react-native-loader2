@@ -1,10 +1,17 @@
 # React Native Loader 2
-[![npm version](https://badge.fury.io/js/react-native-loader2.svg)](https://badge.fury.io/js/react-native-loader2)
-[![Actions Status](https://github.com/kawamurakazushi/react-native-loader2/workflows/{workflow_name}/badge.svg)](https://github.com/kawamurakazushi/react-native-loader2/actions)
-
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 A React Native Overlay Loader, powered by React Hooks.
+
+[![npm version](https://badge.fury.io/js/react-native-loader2.svg)](https://badge.fury.io/js/react-native-loader2)
+[![Actions Status](https://github.com/kawamurakazushi/react-native-loader2/workflows/{workflow_name}/badge.svg)](https://github.com/kawamurakazushi/react-native-loader2/actions)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
+## Example
+
+![hero](images/example.gif)
+
+You can see the full example [Here](https://github.com/kawamurakazushi/react-native-loader2/tree/master/example).
+
 
 ## Install
 
@@ -91,14 +98,15 @@ export default function App() {
 
 ### List of Configurations
 
-| Configurations    | Type   | Default Value |
-| ----------------- | ------ | ------------- |
-| `size`            | number | 100           |
-| `backgroundColor` | string | "#444a"       |
-| `foregroundColor` | string | "#fff"        |
-| `spinnerColor`    | string | "gray"        |
-| `corderRadius`    | number | 4             |
-| `titleColor`      | string | "#444"        |
+| Configurations     | Type                      | Default Value           |
+| ------------------ | ------------------------- | ----------------------- |
+| `size`             | number                    | 100                     |
+| `backgroundColor`  | string                    | "#444a"                 |
+| `foregroundColor`  | string                    | "#fff"                  |
+| `spinnerColor`     | string                    | "gray"                  |
+| `corderRadius`     | number                    | 4                       |
+| `titleColor`       | string                    | "#444"                  |
+| `spinnerComponent` | React.FunctionalComponent | `<ActivityIndicator />` |
 
 
 ## Licence
