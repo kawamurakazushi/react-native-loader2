@@ -1,5 +1,7 @@
 # React Native Loader 2
 [![npm version](https://badge.fury.io/js/react-native-loader2.svg)](https://badge.fury.io/js/react-native-loader2)
+[![Actions Status](https://github.com/kawamurakazushi/react-native-loader2/workflows/{workflow_name}/badge.svg)](https://github.com/kawamurakazushi/react-native-loader2/actions)
+
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 A React Native Overlay Loader, powered by React Hooks.
@@ -56,6 +58,13 @@ export default () => {
 
 ```
 
+Show loader with text:
+
+```jsx
+showLoader("Loading...");
+```
+
+
 ## Configurations
 
 React Native Loader 2 has simple configuration system.
@@ -89,6 +98,7 @@ export default function App() {
 | `foregroundColor` | string | "#fff"        |
 | `spinnerColor`    | string | "gray"        |
 | `corderRadius`    | number | 4             |
+| `titleColor`      | string | "#444"        |
 
 
 ## Licence

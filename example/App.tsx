@@ -2,14 +2,14 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Provider } from "react-native-loader2";
 
-import LoaderButton from "./Button";
+import Buttons from "./Buttons";
 
 export default function App() {
   return (
     <Provider>
       <View style={styles.container}>
         <Text>EXAMPLE</Text>
-        <LoaderButton />
+        <Buttons />
       </View>
     </Provider>
   );

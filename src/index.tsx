@@ -1,72 +1,34 @@
 import React, { useState, useContext } from "react";
-import { View, ActivityIndicator } from "react-native";
+
+import { Loader } from "./Loader";
 
 interface Context {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setTitle: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const LoaderContext = React.createContext<Context>({
-  setLoading: () => {}
+  setLoading: () => {},
+  setTitle: () => {}
 });
 
 export const useLoader = () => {
-  const { setLoading } = useContext(LoaderContext);
+  const { setLoading, setTitle } = useContext(LoaderContext);
 
-  const showLoader = () => {
+  const showLoader = (title?: string) => {
     setLoading(true);
+    if (title) {
+      setTitle(title);
+    }
   };
 
   const hideLoader = () => {
     setLoading(false);
+    setTitle(null);
   };
 
   return { showLoader, hideLoader };
 };
-
-interface LoaderProps {
-  size: number;
-  backgroundColor: string;
-  foregroundColor: string;
-  spinnerColor: string;
-  cornerRadius: number;
-}
-
-const Loader = ({
-  size,
-  backgroundColor,
-  foregroundColor,
-  spinnerColor,
-  cornerRadius
-}: LoaderProps) => (
-  <View
-    style={{
-      position: "absolute",
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      backgroundColor: backgroundColor,
-      zIndex: 99999,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}
-  >
-    <View
-      style={{
-        borderRadius: cornerRadius,
-        backgroundColor: foregroundColor,
-        width: size,
-        height: size,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      <ActivityIndicator color={spinnerColor} size="large" />
-    </View>
-  </View>
-);
 
 export interface OptionalConfig {
   size?: number;
@@ -74,6 +36,7 @@ export interface OptionalConfig {
   foregroundColor?: string;
   spinnerColor?: string;
   cornerRadius?: number;
+  titleColor?: string;
 }
 
 interface Config {
@@ -82,6 +45,7 @@ interface Config {
   foregroundColor: string;
   spinnerColor: string;
   cornerRadius: number;
+  titleColor: string;
 }
 
 export interface ProviderProps {
@@ -94,21 +58,25 @@ const defaultConfig: Config = {
   backgroundColor: "#444a",
   foregroundColor: "#fff",
   spinnerColor: "gray",
-  cornerRadius: 4
+  cornerRadius: 4,
+  titleColor: "#444"
 };
 
 export const Provider = ({ children, config }: ProviderProps) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [title, setTitle] = useState<string | null>(null);
+
   const {
     size,
     backgroundColor,
     foregroundColor,
     spinnerColor,
-    cornerRadius
+    cornerRadius,
+    titleColor
   } = { ...defaultConfig, ...config };
 
   return (
-    <LoaderContext.Provider value={{ setLoading }}>
+    <LoaderContext.Provider value={{ setLoading, setTitle }}>
       <>
         {loading && (
           <Loader
@@ -117,6 +85,8 @@ export const Provider = ({ children, config }: ProviderProps) => {
             foregroundColor={foregroundColor}
             spinnerColor={spinnerColor}
             cornerRadius={cornerRadius}
+            title={title}
+            titleColor={titleColor}
           />
         )}
         {children}
