@@ -1,11 +1,12 @@
 {
   "name": "react-native-loader2",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Kazushi Kawamura <wakaka2277@gmail.com>",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-native": "^0.60.21",
+    "standard-version": "^7.0.0",
     "typescript": "^3.6.4"
   },
   "keywords": [
@@ -34,6 +35,7 @@
   "repository": "ssh://git@github.com/kawamurakazushi/react-native-loader2.git",
   "scripts": {
     "build": "tsc",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "release": "standard-version"
   }
 }
