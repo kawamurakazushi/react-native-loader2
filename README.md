@@ -3,7 +3,7 @@
 A React Native Overlay Loader, powered by React Hooks.
 
 [![npm version](https://badge.fury.io/js/react-native-loader2.svg)](https://badge.fury.io/js/react-native-loader2)
-[![Actions Status](https://github.com/kawamurakazushi/react-native-loader2/workflows/{workflow_name}/badge.svg)](https://github.com/kawamurakazushi/react-native-loader2/actions)
+[![Actions Status](https://github.com/kawamurakazushi/react-native-loader2/workflows/react-native-loader2/badge.svg)](https://github.com/kawamurakazushi/react-native-loader2/actions)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## Example
